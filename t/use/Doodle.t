@@ -15,7 +15,6 @@ Database DDL Statement Builder
 
 =synopsis
 
-  use do;
   use Doodle;
 
   my $d = Doodle->new;
@@ -27,9 +26,9 @@ Database DDL Statement Builder
   $t->string('email');
   $t->json('metadata');
 
-  my $x = $t->create; # command
+  my $x = $t->create;
   my $g = $d->grammar('sqlite');
-  my $s = $g->execute($x); # statement
+  my $s = $g->execute($x);
 
   say $s->sql;
 
