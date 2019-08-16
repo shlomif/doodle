@@ -1,0 +1,28 @@
+
+=encoding utf8
+
+=head1 NAME
+
+Doodle::Command
+
+=cut
+
+=head1 ABSTRACT
+
+Doodle Command Class
+
+=cut
+
+=head1 SYNOPSIS
+
+  use Doodle::Command;
+
+  my $self = Doodle::Command->new(%args);
+
+=cut
+
+=head1 DESCRIPTION
+
+Description of a DDL statement to build.
+
+=cut

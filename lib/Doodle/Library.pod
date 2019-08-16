@@ -1,0 +1,27 @@
+
+=encoding utf8
+
+=head1 NAME
+
+Doodle
+
+=cut
+
+=head1 ABSTRACT
+
+Doodle Type Library
+
+=cut
+
+=head1 SYNOPSIS
+
+  use Doodle::Library;
+
+=cut
+
+=head1 DESCRIPTION
+
+Doodle::Library is the L<Doodle> type library derived from
+L<Data::Object::Library> which is a L<Type::Library>
+
+=cut

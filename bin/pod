@@ -138,12 +138,12 @@ sub output_pod_for_mod {
 
   my $name = $mod =~ s/\//_/gr;
 
-  push @output, output_pod_for_use_test("t/0.90/use/$name.t");
+  push @output, output_pod_for_use_test("t/use/$name.t");
 
   my @methods; my @functions; my @routines;
 
   for my $sub (subs($mod)) {
-    my ($data, $type) = output_pod_for_can_test("t/0.90/can/${name}_${sub}.t");
+    my ($data, $type) = output_pod_for_can_test("t/can/${name}_${sub}.t");
     if ($type eq 'function') {
       push @functions, $data;
     }
@@ -364,6 +364,32 @@ sub subs {
     BUILD
     BUILDARGS
     import
+    new_columns
+    new_commands
+    new_data
+    new_indices
+    new_name
+    new_relations
+    render_column
+    render_column_change
+    render_column_name
+    render_columns
+    render_constraint
+    render_constraints
+    render_if_exists
+    render_increments
+    render_index_columns
+    render_index_name
+    render_new_column
+    render_new_column_name
+    render_new_table
+    render_nullable
+    render_primary
+    render_relation
+    render_relation_name
+    render_table
+    render_temporary
+    render_type
   );
 
   my @files = map { /^(?:$re)\s+([a-zA-Z]\w+).*\{$/ } source("lib/$path.pm");
