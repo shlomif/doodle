@@ -11,7 +11,7 @@ Doodle
 
 =abstract
 
-Database DDL Builder
+Database DDL Statement Builder
 
 =synopsis
 
@@ -43,7 +43,7 @@ Database DDL Builder
 
 =description
 
-Doodle is a database DDL query builder and provides an object-oriented
+Doodle is a database DDL statement builder and provides an object-oriented
 abstraction for performing schema changes in various datastores.
 
 =cut
