@@ -1,0 +1,148 @@
+
+=encoding utf8
+
+=head1 NAME
+
+Doodle::Table
+
+=cut
+
+=head1 ABSTRACT
+
+Doodle Table Class
+
+=cut
+
+=head1 SYNOPSIS
+
+  use Doodle::Table;
+
+  my $self = Doodle::Table->new(
+    name => 'users'
+  );
+
+=cut
+
+=head1 DESCRIPTION
+
+Database table representation.
+
+=cut
+
+=head1 METHODS
+
+This package implements the following methods.
+
+=cut
+
+=head2 column
+
+  column(Str $name, Any @args) : Column
+
+Returns a new Column object.
+
+=over 4
+
+=item column example
+
+  my $column = $self->column;
+
+=back
+
+=cut
+
+=head2 create
+
+  create(Any %args) : Command
+
+Registers a table create and returns the Command object.
+
+=over 4
+
+=item create example
+
+  my $create = $self->create;
+
+=back
+
+=cut
+
+=head2 delete
+
+  delete(Any %args) : Command
+
+Registers a table delete and returns the Command object.
+
+=over 4
+
+=item delete example
+
+  my $delete = $self->delete;
+
+=back
+
+=cut
+
+=head2 index
+
+  index(ArrayRef :$columns, Any %args) : Index
+
+Returns a new Index object.
+
+=over 4
+
+=item index example
+
+  my $index = $self->index(columns => ['email', 'password']);
+
+=back
+
+=cut
+
+=head2 relation
+
+  relation(Str $column, Str $ftable, Str $fcolumn, Any %args) : Relation
+
+Returns a new Relation object.
+
+=over 4
+
+=item relation example
+
+  my $relation = $self->relation('profile_id', 'profiles', 'id');
+
+=back
+
+=cut
+
+=head2 rename
+
+  rename(Any %args) : Command
+
+Registers a table rename and returns the Command object.
+
+=over 4
+
+=item rename example
+
+  my $rename = $self->rename;
+
+=back
+
+=cut
+
+=head2 update
+
+  update(Any %args) : Command
+
+Registers a table update and returns the Command object.
+
+=over 4
+
+=item update example
+
+  my $update = $self->update;
+
+=back
+
+=cut

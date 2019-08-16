@@ -1,0 +1,82 @@
+
+=encoding utf8
+
+=head1 NAME
+
+Doodle::Schema
+
+=cut
+
+=head1 ABSTRACT
+
+Doodle Schema Class
+
+=cut
+
+=head1 SYNOPSIS
+
+  use Doodle::Schema;
+
+  my $self = Doodle::Schema->new(%args);
+
+=cut
+
+=head1 DESCRIPTION
+
+Database representation.
+
+=cut
+
+=head1 METHODS
+
+This package implements the following methods.
+
+=cut
+
+=head2 create
+
+  create(Any %args) : Command
+
+Registers a schema create and returns the Command object.
+
+=over 4
+
+=item create example
+
+  my $create = $self->create;
+
+=back
+
+=cut
+
+=head2 delete
+
+  delete(Any %args) : Command
+
+Registers a schema delete and returns the Command object.
+
+=over 4
+
+=item delete example
+
+  my $delete = $self->delete;
+
+=back
+
+=cut
+
+=head2 table
+
+  table(Str $name, Any @args) : Table
+
+Returns a new Table object.
+
+=over 4
+
+=item table example
+
+  my $table = $self->table;
+
+=back
+
+=cut

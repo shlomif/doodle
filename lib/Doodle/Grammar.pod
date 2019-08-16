@@ -1,0 +1,295 @@
+
+=encoding utf8
+
+=head1 NAME
+
+Doodle::Grammar
+
+=cut
+
+=head1 ABSTRACT
+
+Doodle Grammar Base Class
+
+=cut
+
+=head1 SYNOPSIS
+
+  use Doodle::Grammar;
+
+  my $self = Doodle::Grammar->new(%args);
+
+=cut
+
+=head1 DESCRIPTION
+
+Doodle::Grammar determines how Command classes should be interpreted to produce the correct DDL
+statements.
+
+=cut
+
+=head1 METHODS
+
+This package implements the following methods.
+
+=cut
+
+=head2 create_column
+
+  create_column(Command $command) : Str
+
+Generate SQL statement for column-create Command.
+
+=over 4
+
+=item create_column example
+
+  my $create_column = $self->create_column;
+
+=back
+
+=cut
+
+=head2 create_constraint
+
+  create_constraint(Column $column) : Str
+
+Returns the SQL statement for the create constraint command.
+
+=over 4
+
+=item create_constraint example
+
+  $self->create_constraint($column);
+
+  # 
+
+=back
+
+=cut
+
+=head2 create_index
+
+  create_index(Command $command) : Str
+
+Generate SQL statement for index-create Command.
+
+=over 4
+
+=item create_index example
+
+  my $create_index = $self->create_index;
+
+=back
+
+=cut
+
+=head2 create_schema
+
+  create_schema(Command $command) : Str
+
+Generate SQL statement for schema-create Command.
+
+=over 4
+
+=item create_schema example
+
+  my $create_schema = $self->create_schema;
+
+=back
+
+=cut
+
+=head2 create_table
+
+  create_table(Command $command) : Str
+
+Generate SQL statement for table-create Command.
+
+=over 4
+
+=item create_table example
+
+  my $create_table = $self->create_table;
+
+=back
+
+=cut
+
+=head2 delete_column
+
+  delete_column(Command $command) : Str
+
+Generate SQL statement for column-delete Command.
+
+=over 4
+
+=item delete_column example
+
+  my $delete_column = $self->delete_column;
+
+=back
+
+=cut
+
+=head2 delete_constraint
+
+  delete_constraint(Column $column) : Str
+
+Returns the SQL statement for the delete constraint command.
+
+=over 4
+
+=item delete_constraint example
+
+  $self->delete_constraint($column);
+
+  # 
+
+=back
+
+=cut
+
+=head2 delete_index
+
+  delete_index(Command $command) : Str
+
+Generate SQL statement for index-delete Command.
+
+=over 4
+
+=item delete_index example
+
+  my $delete_index = $self->delete_index;
+
+=back
+
+=cut
+
+=head2 delete_schema
+
+  delete_schema(Command $command) : Str
+
+Generate SQL statement for schema-delete Command.
+
+=over 4
+
+=item delete_schema example
+
+  my $delete_schema = $self->delete_schema;
+
+=back
+
+=cut
+
+=head2 delete_table
+
+  delete_table(Command $command) : Str
+
+Generate SQL statement for table-delete Command.
+
+=over 4
+
+=item delete_table example
+
+  my $delete_table = $self->delete_table;
+
+=back
+
+=cut
+
+=head2 exception
+
+  exception(Str $message) : ()
+
+Throws an exception using L<Carp> confess.
+
+=over 4
+
+=item exception example
+
+  $self->exception($message);
+
+=back
+
+=cut
+
+=head2 execute
+
+  execute(Command $command) : Statement
+
+Processed the Command and returns a Statement object.
+
+=over 4
+
+=item execute example
+
+  my $statement = $self->execute($command);
+
+=back
+
+=cut
+
+=head2 rename_column
+
+  rename_column(Command $command) : Str
+
+Generate SQL statement for column-rename Command.
+
+=over 4
+
+=item rename_column example
+
+  my $rename_column = $self->rename_column;
+
+=back
+
+=cut
+
+=head2 rename_table
+
+  rename_table(Command $command) : Str
+
+Generate SQL statement for table-rename Command.
+
+=over 4
+
+=item rename_table example
+
+  my $rename_table = $self->rename_table;
+
+=back
+
+=cut
+
+=head2 render
+
+  render(Command $command) : Str
+
+Returns the SQL statement for the given Command.
+
+=over 4
+
+=item render example
+
+  my $sql = $self->render($command);
+
+=back
+
+=cut
+
+=head2 update_column
+
+  update_column(Any @args) : Object
+
+Generate SQL statement for column-update Command.
+
+=over 4
+
+=item update_column example
+
+  my $update_column = $self->update_column;
+
+=back
+
+=cut
