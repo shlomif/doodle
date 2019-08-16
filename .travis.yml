@@ -15,7 +15,7 @@ env:
   - "HARNESS_OPTIONS=j9"
 
 install:
-  - "sudo cpanm -qn Perl::Critic && sudo cpanm -qn --installdeps ."
+  - "cpanm -qn Perl::Critic && cpanm -qn --installdeps ."
 
 jobs:
   include:
