@@ -21,7 +21,7 @@ Generate SQL statement for table-delete Command.
 
 =signature
 
-delete_table(Any @args) : Object
+delete_table(Command $command) : Str
 
 =type
 

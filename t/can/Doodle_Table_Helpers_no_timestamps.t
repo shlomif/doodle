@@ -22,7 +22,7 @@ returns the Command object set.
 
 =signature
 
-no_timestamps() : Object
+no_timestamps() : [Command]
 
 =type
 

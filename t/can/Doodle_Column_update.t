@@ -21,7 +21,7 @@ Registers a column update and returns the Command object.
 
 =signature
 
-update(Any @args) : Object
+update(Any %args) : Command
 
 =type
 

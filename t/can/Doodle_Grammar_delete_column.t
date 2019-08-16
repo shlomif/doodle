@@ -21,7 +21,7 @@ Generate SQL statement for column-delete Command.
 
 =signature
 
-delete_column(Any @args) : Object
+delete_column(Command $command) : Str
 
 =type
 

@@ -21,7 +21,7 @@ Generate SQL statement for table-rename Command.
 
 =signature
 
-rename_table(Any @args) : Object
+rename_table(Command $command) : Str
 
 =type
 

@@ -21,7 +21,7 @@ Generate SQL statement for index-delete Command.
 
 =signature
 
-delete_index(Any @args) : Object
+delete_index(Command $command) : Str
 
 =type
 

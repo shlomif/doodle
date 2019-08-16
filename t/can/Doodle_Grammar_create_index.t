@@ -21,7 +21,7 @@ Generate SQL statement for index-create Command.
 
 =signature
 
-create_index(Any @args) : Object
+create_index(Command $command) : Str
 
 =type
 

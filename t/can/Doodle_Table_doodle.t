@@ -21,7 +21,7 @@ Returns the associated Doodle object.
 
 =signature
 
-doodle(Any @args) : Object
+doodle() : Doodle
 
 =type
 

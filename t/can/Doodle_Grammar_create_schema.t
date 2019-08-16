@@ -21,7 +21,7 @@ Generate SQL statement for schema-create Command.
 
 =signature
 
-create_schema(Any @args) : Object
+create_schema(Command $command) : Str
 
 =type
 

@@ -21,7 +21,7 @@ Registers an index delete and returns the Command object.
 
 =signature
 
-delete(Any @args) : Object
+delete(Any %args) : Command
 
 =type
 

@@ -13,7 +13,11 @@ build
 
 =usage
 
-  my $build = $self->build;
+  $self->build($grammar, sub {
+    my $statement = shift;
+
+    # e.g. $db->do($statement->sql);
+  });
 
 =description
 
@@ -21,7 +25,7 @@ Execute a given callback for each generated SQL statement.
 
 =signature
 
-build(Any @args) : Object
+build(Grammar $g, CodeRef $callback) : ()
 
 =type
 

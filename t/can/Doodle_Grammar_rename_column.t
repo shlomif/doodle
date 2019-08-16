@@ -21,7 +21,7 @@ Generate SQL statement for column-rename Command.
 
 =signature
 
-rename_column(Any @args) : Object
+rename_column(Command $command) : Str
 
 =type
 

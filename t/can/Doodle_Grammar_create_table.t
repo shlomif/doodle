@@ -21,7 +21,7 @@ Generate SQL statement for table-create Command.
 
 =signature
 
-create_table(Any @args) : Object
+create_table(Command $command) : Str
 
 =type
 

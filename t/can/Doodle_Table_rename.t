@@ -21,7 +21,7 @@ Registers a table rename and returns the Command object.
 
 =signature
 
-rename(Any @args) : Object
+rename(Any %args) : Command
 
 =type
 

@@ -21,7 +21,7 @@ Registers a schema create and returns the Command object.
 
 =signature
 
-create(Any @args) : Object
+create(Any %args) : Command
 
 =type
 

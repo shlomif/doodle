@@ -21,7 +21,7 @@ Returns a new Column object.
 
 =signature
 
-column(Any @args) : Object
+column(Str $name, Any @args) : Column
 
 =type
 

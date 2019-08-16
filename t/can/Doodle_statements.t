@@ -13,7 +13,7 @@ statements
 
 =usage
 
-  my $statements = $self->statements;
+  my $statements = $self->statements($grammar);
 
 =description
 
@@ -21,7 +21,7 @@ Returns a set of Statement objects for the given grammar.
 
 =signature
 
-statements(Any @args) : Object
+statements(Grammar $g) : [Statement]
 
 =type
 

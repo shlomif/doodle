@@ -21,7 +21,7 @@ Generate SQL statement for schema-delete Command.
 
 =signature
 
-delete_schema(Any @args) : Object
+delete_schema(Command $command) : Str
 
 =type
 

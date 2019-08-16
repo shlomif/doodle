@@ -21,7 +21,7 @@ Generate SQL statement for column-create Command.
 
 =signature
 
-create_column(Any @args) : Object
+create_column(Command $command) : Str
 
 =type
 

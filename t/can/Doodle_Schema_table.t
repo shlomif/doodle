@@ -21,7 +21,7 @@ Returns a new Table object.
 
 =signature
 
-table(Any @args) : Object
+table(Str $name, Any @args) : Table
 
 =type
 
