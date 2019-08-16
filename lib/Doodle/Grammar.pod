@@ -36,7 +36,7 @@ This package implements the following methods.
 
 =head2 create_column
 
-  create_column(Any @args) : Object
+  create_column(Command $command) : Str
 
 Generate SQL statement for column-create Command.
 
@@ -70,7 +70,7 @@ Returns the SQL statement for the create constraint command.
 
 =head2 create_index
 
-  create_index(Any @args) : Object
+  create_index(Command $command) : Str
 
 Generate SQL statement for index-create Command.
 
@@ -86,7 +86,7 @@ Generate SQL statement for index-create Command.
 
 =head2 create_schema
 
-  create_schema(Any @args) : Object
+  create_schema(Command $command) : Str
 
 Generate SQL statement for schema-create Command.
 
@@ -102,7 +102,7 @@ Generate SQL statement for schema-create Command.
 
 =head2 create_table
 
-  create_table(Any @args) : Object
+  create_table(Command $command) : Str
 
 Generate SQL statement for table-create Command.
 
@@ -118,7 +118,7 @@ Generate SQL statement for table-create Command.
 
 =head2 delete_column
 
-  delete_column(Any @args) : Object
+  delete_column(Command $command) : Str
 
 Generate SQL statement for column-delete Command.
 
@@ -152,7 +152,7 @@ Returns the SQL statement for the delete constraint command.
 
 =head2 delete_index
 
-  delete_index(Any @args) : Object
+  delete_index(Command $command) : Str
 
 Generate SQL statement for index-delete Command.
 
@@ -168,7 +168,7 @@ Generate SQL statement for index-delete Command.
 
 =head2 delete_schema
 
-  delete_schema(Any @args) : Object
+  delete_schema(Command $command) : Str
 
 Generate SQL statement for schema-delete Command.
 
@@ -184,7 +184,7 @@ Generate SQL statement for schema-delete Command.
 
 =head2 delete_table
 
-  delete_table(Any @args) : Object
+  delete_table(Command $command) : Str
 
 Generate SQL statement for table-delete Command.
 
@@ -232,7 +232,7 @@ Processed the Command and returns a Statement object.
 
 =head2 rename_column
 
-  rename_column(Any @args) : Object
+  rename_column(Command $command) : Str
 
 Generate SQL statement for column-rename Command.
 
@@ -248,7 +248,7 @@ Generate SQL statement for column-rename Command.
 
 =head2 rename_table
 
-  rename_table(Any @args) : Object
+  rename_table(Command $command) : Str
 
 Generate SQL statement for table-rename Command.
 

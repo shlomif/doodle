@@ -4,11 +4,10 @@ NAME
 
 ABSTRACT
 
-    Database DDL Builder
+    Database DDL Statement Builder
 
 SYNOPSIS
 
-      use do;
       use Doodle;
     
       my $d = Doodle->new;
@@ -20,9 +19,9 @@ SYNOPSIS
       $t->string('email');
       $t->json('metadata');
     
-      my $x = $t->create; # command
+      my $x = $t->create;
       my $g = $d->grammar('sqlite');
-      my $s = $g->execute($x); # statement
+      my $s = $g->execute($x);
     
       say $s->sql;
     
@@ -36,8 +35,9 @@ SYNOPSIS
 
 DESCRIPTION
 
-    Doodle is a database DDL query builder and provides an object-oriented
-    abstraction for performing schema changes in various datastores.
+    Doodle is a database DDL statement builder and provides an
+    object-oriented abstraction for performing schema changes in various
+    datastores.
 
 METHODS
 
@@ -45,13 +45,17 @@ METHODS
 
  build
 
-      build(Any @args) : Object
+      build(Grammar $g, CodeRef $callback) : ()
 
     Execute a given callback for each generated SQL statement.
 
     build example
 
-        my $build = $self->build;
+        $self->build($grammar, sub {
+          my $statement = shift;
+      
+          # e.g. $db->do($statement->sql);
+        });
 
  column_create
 
@@ -175,13 +179,13 @@ METHODS
 
  statements
 
-      statements(Any @args) : Object
+      statements(Grammar $g) : [Statement]
 
     Returns a set of Statement objects for the given grammar.
 
     statements example
 
-        my $statements = $self->statements;
+        my $statements = $self->statements($grammar);
 
  table
 

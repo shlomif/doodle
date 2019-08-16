@@ -17,10 +17,10 @@ my %WriteMakefileArgs = (
   "MIN_PERL_VERSION" => "5.014",
   "NAME" => "Doodle",
   "PREREQ_PM" => {
-    "Data::Object" => "0.97"
+    "Data::Object" => "0.98"
   },
   "TEST_REQUIRES" => {
-    "Data::Object" => "0.97"
+    "Data::Object" => "0.98"
   },
   "VERSION" => "0.01",
   "test" => {
@@ -30,7 +30,7 @@ my %WriteMakefileArgs = (
 
 
 my %FallbackPrereqs = (
-  "Data::Object" => "0.97"
+  "Data::Object" => "0.98"
 );
 
 

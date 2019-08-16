@@ -35,7 +35,7 @@ This package implements the following methods.
 
 =head2 create
 
-  create(Any @args) : Object
+  create(Any %args) : Command
 
 Registers a schema create and returns the Command object.
 
@@ -51,7 +51,7 @@ Registers a schema create and returns the Command object.
 
 =head2 delete
 
-  delete(Any @args) : Object
+  delete(Any %args) : Command
 
 Registers a schema delete and returns the Command object.
 
@@ -67,7 +67,7 @@ Registers a schema delete and returns the Command object.
 
 =head2 table
 
-  table(Any @args) : Object
+  table(Str $name, Any @args) : Table
 
 Returns a new Table object.
 

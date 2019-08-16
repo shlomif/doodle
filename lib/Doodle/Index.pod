@@ -35,7 +35,7 @@ This package implements the following methods.
 
 =head2 create
 
-  create(Any @args) : Object
+  create(Any %args) : Command
 
 Registers an index create and returns the Command object.
 
@@ -51,7 +51,7 @@ Registers an index create and returns the Command object.
 
 =head2 delete
 
-  delete(Any @args) : Object
+  delete(Any %args) : Command
 
 Registers an index delete and returns the Command object.
 
@@ -67,7 +67,7 @@ Registers an index delete and returns the Command object.
 
 =head2 doodle
 
-  doodle(Any @args) : Object
+  doodle() : Doodle
 
 Returns the associated Doodle object.
 

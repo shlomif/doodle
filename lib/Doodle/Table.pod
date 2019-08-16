@@ -37,7 +37,7 @@ This package implements the following methods.
 
 =head2 column
 
-  column(Any @args) : Object
+  column(Str $name, Any @args) : Column
 
 Returns a new Column object.
 
@@ -69,7 +69,7 @@ Registers a table create and returns the Command object.
 
 =head2 delete
 
-  delete(Any @args) : Object
+  delete(Any %args) : Command
 
 Registers a table delete and returns the Command object.
 
@@ -117,7 +117,7 @@ Returns a new Relation object.
 
 =head2 rename
 
-  rename(Any @args) : Object
+  rename(Any %args) : Command
 
 Registers a table rename and returns the Command object.
 

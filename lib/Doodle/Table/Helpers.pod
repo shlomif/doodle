@@ -439,7 +439,7 @@ Registers columns neccessary for polymorphism and returns the Column object set.
 
 =head2 no_timestamps
 
-  no_timestamps() : Object
+  no_timestamps() : [Command]
 
 Registers a drop for C<created_at>, C<updated_at> and C<deleted_at> columns and
 returns the Command object set.

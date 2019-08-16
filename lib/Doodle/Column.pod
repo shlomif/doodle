@@ -83,7 +83,7 @@ Returns the associated Doodle object.
 
 =head2 rename
 
-  rename(Any @args) : Object
+  rename(Any %args) : Command
 
 Registers a column rename and returns the Command object.
 
@@ -99,7 +99,7 @@ Registers a column rename and returns the Command object.
 
 =head2 update
 
-  update(Any @args) : Object
+  update(Any %args) : Command
 
 Registers a column update and returns the Command object.
 

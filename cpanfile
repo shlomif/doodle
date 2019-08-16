@@ -1,8 +1,8 @@
-requires "Data::Object" => "0.97";
+requires "Data::Object" => "0.98";
 requires "perl" => "5.014";
 
 on 'test' => sub {
-  requires "Data::Object" => "0.97";
+  requires "Data::Object" => "0.98";
   requires "perl" => "5.014";
 };
 
