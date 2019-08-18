@@ -15,21 +15,6 @@ has name => (
   def => 'unknown'
 );
 
-has engine => (
-  is => 'ro',
-  isa => 'Str'
-);
-
-has charset => (
-  is => 'ro',
-  isa => 'Str'
-);
-
-has collation => (
-  is => 'ro',
-  isa => 'Str'
-);
-
 # METHODS
 
 method exception(Str $msg) {
@@ -164,19 +149,29 @@ method render_temporary(Command $cmd) {
 }
 
 method render_if_exists(Command $cmd) {
-  # render table "if exists" clause
+  # render schema/table "if exists" clause
 
-  return 'if exists' if $cmd->table->data->{if_exists};
+  my $source = $cmd->name =~ /schema/ ? $cmd->schema : $cmd->table;
+
+  return 'if exists' if $source->data->{if_exists};
 
   return undef;
 }
 
 method render_if_not_exists(Command $cmd) {
-  # render table "if exists" clause
+  # render schema/table "if exists" clause
 
-  return 'if not exists' if $cmd->table->data->{if_not_exists};
+  my $source = $cmd->name =~ /schema/ ? $cmd->schema : $cmd->table;
+
+  return 'if not exists' if $source->data->{if_not_exists};
 
   return undef;
+}
+
+method render_schema_name(Command $cmd) {
+  # render schema name
+
+  return $self->wrap($cmd->schema->name);
 }
 
 method render_table(Command $cmd) {
@@ -262,7 +257,7 @@ method render_constraint(Relation $rel) {
   my $ftable = $self->wrap($rel->foreign_table);
   my $fcolumn = $self->wrap($rel->foreign_column);
 
-  return "foreign key ($column) references $ftable($fcolumn)";
+  return "foreign key ($column) references $ftable ($fcolumn)";
 }
 
 method render_nullable(Column $col) {
@@ -308,20 +303,48 @@ method render_relation(Command $cmd) {
 
   my $relation = $cmd->relation;
 
-  my $name = $relation->name;
-  my $column = $relation->column;
-  my $ftable = $relation->foreign_table;
-  my $fcolumn = $relation->foreign_column;
+  my $name = $self->wrap($relation->name);
+  my $expr = $self->render_constraint($relation);
 
-  my @args = ($name, $column, $ftable, $fcolumn);
+  my $on_delete = $relation->data->{on_delete};
+  my $on_update = $relation->data->{on_update};
 
-  return sprintf '%s foreign key (%s) references %s (%s)', @args;
+  my @args = ($name, $expr);
+
+  push @args, "on delete $on_delete" if $on_delete;
+  push @args, "on update $on_update" if $on_update;
+
+  return join ' ', @args;
 }
 
 method render_relation_name(Command $cmd) {
   # render table create foreign key name
 
   return $self->wrap($cmd->relation->name);
+}
+
+method render_engine(Command $cmd) {
+  # render engine
+
+  my $engine =  $cmd->table->engine;
+
+  return return $engine ? "engine = $engine" : undef;
+}
+
+method render_charset(Command $cmd) {
+  # render charset
+
+  my $charset = $cmd->table->charset;
+
+  return $charset ? "character set $charset" : undef;
+}
+
+method render_collation(Command $cmd) {
+  # render collation
+
+  my $collation = $cmd->table->collation;
+
+  return $collation ? "collate $collation" : undef;
 }
 
 1;

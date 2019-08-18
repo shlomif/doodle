@@ -275,6 +275,18 @@ method delete_relation(Command $cmd) {
   return $self->render($s, $cmd);
 }
 
+method create_schema(Command $cmd) {
+  my $s ='create database {schema_name}';
+
+  return $self->render($s, $cmd);
+}
+
+method delete_schema(Command $cmd) {
+  my $s ='drop database {schema_name}';
+
+  return $self->render($s, $cmd);
+}
+
 method render_increments(Column $col) {
   # render column auto-increment expression
 

@@ -1,6 +1,22 @@
 Changelog for Doodle
 
-0.02 2019-08-18T05:47:18
+0.03 2019-08-18T23:18:31
+ - Updated documentation
+ - Updated release script
+ - Enable support for DB engine, charset and collation
+ - Added support for foreign constraint "on update on delete" clauses
+ - Updated table/schema if [not] exists methods
+ - Added missing Schema::Helpers test
+ - Added support for schema create/delete if [not] exists clauses
+ - Added tests for Table#no_morphs
+ - Added create/delete schema tests
+ - Added schema create/delete tests
+ - Added ability to delete polymorphic columns
+ - Fixed schema create/delete operations
+ - Table#relation fcolumn defaults to id
+
+0.02 2019-08-18T05:47:23
+ - Built release version 0.02
  - Updated documentation
  - Updated build and release scripts
  - Updated miscellaneous tests

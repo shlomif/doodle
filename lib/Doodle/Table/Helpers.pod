@@ -471,6 +471,23 @@ Registers columns neccessary for polymorphism and returns the Column object set.
 
 =cut
 
+=head2 no_morphs
+
+  no_morphs(Str $name) : [Command]
+
+Registers a drop for C<{name}_fkey> and C<{name}_type> polymorphic columns and
+returns the Command object set.
+
+=over 4
+
+=item no_morphs example
+
+  my $no_morphs = $self->no_morphs('profile');
+
+=back
+
+=cut
+
 =head2 no_timestamps
 
   no_timestamps() : [Command]

@@ -316,6 +316,16 @@ method timestamps_tz() {
   return [$created_at, $updated_at, $deleted_at];
 }
 
+method no_morphs(Str $name) {
+  my $type = "${name}_type";
+  my $fkey = "${name}_fkey";
+
+  my $type_column = $self->string($type)->delete;
+  my $fkey_column = $self->integer($fkey)->delete;
+
+  return [$type_column, $fkey_column];
+}
+
 method no_timestamps() {
   my $created_at = $self->column('created_at')->delete;
   my $updated_at = $self->column('updated_at')->delete;

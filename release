@@ -13,7 +13,7 @@ perl -Ilib bin/pod
 
 # Push generated POD changes
 if ! git diff-index --quiet HEAD --; then
-  git commit -am 'Updated documentation'
+  git add . && git commit -m 'Updated documentation'
 fi
 
 # Build, Tag, and Push Package Release

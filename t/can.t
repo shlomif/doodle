@@ -93,6 +93,10 @@ sub subroutines {
     render_primary
     render_relation
     render_relation_name
+    render_charset
+    render_collation
+    render_engine
+    render_schema_name
     render_table
     render_temporary
     render_type

@@ -4,6 +4,8 @@ use 5.014;
 
 use Data::Object 'Class', 'Doodle::Library';
 
+with 'Doodle::Relation::Helpers';
+
 # VERSION
 
 has name => (

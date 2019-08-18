@@ -58,6 +58,21 @@ has data => (
   lzy => 1
 );
 
+has engine => (
+  is => 'rw',
+  isa => 'Str'
+);
+
+has charset => (
+  is => 'rw',
+  isa => 'Str'
+);
+
+has collation => (
+  is => 'rw',
+  isa => 'Str'
+);
+
 # BUILD
 
 fun new_data($self) {
@@ -98,7 +113,7 @@ method index(ArrayRef :$columns, Any %args) {
   return $index;
 }
 
-method relation(Str $column, Str $ftable, Str $fcolumn, Any %args) {
+method relation(Str $column, Str $ftable, Str $fcolumn = 'id', Any %args) {
   $args{table} = $self;
 
   $args{column} = $column;
