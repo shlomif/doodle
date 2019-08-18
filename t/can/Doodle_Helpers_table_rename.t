@@ -31,6 +31,8 @@ method
 
 # TESTING
 
-use_ok 'Doodle', 'table_rename';
+use Doodle::Helpers;
+
+use_ok 'Doodle::Helpers', 'table_rename';
 
 ok 1 and done_testing;

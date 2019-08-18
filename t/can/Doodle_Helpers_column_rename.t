@@ -31,6 +31,8 @@ method
 
 # TESTING
 
-use_ok 'Doodle', 'column_rename';
+use Doodle::Helpers;
+
+use_ok 'Doodle::Helpers', 'column_rename';
 
 ok 1 and done_testing;

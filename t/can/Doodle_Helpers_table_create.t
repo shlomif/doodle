@@ -31,8 +31,8 @@ method
 
 # TESTING
 
-use Doodle;
+use Doodle::Helpers;
 
-can_ok "Doodle", "table_create";
+can_ok "Doodle::Helpers", "table_create";
 
 ok 1 and done_testing;

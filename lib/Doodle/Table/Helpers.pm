@@ -6,7 +6,6 @@ use Data::Object 'Role', 'Doodle::Library';
 
 # VERSION
 
-# BUILD
 # METHODS
 
 method binary(Str $name, Any %args) {
@@ -229,6 +228,18 @@ method string(Str $name, Any %args) {
 
 method temporary() {
   $self->data->{temporary} = 1;
+
+  return $self;
+}
+
+method if_exists() {
+  $self->data->{if_exists} = 1;
+
+  return $self;
+}
+
+method if_not_exists() {
+  $self->data->{if_not_exists} = 1;
 
   return $self;
 }

@@ -5,16 +5,10 @@ if ! git diff-index --quiet HEAD --; then
   echo "Uncommitted changes!" && exit 0;
 fi
 
-# Delete existing POD documents
-find lib -type f -name \*.pod -exec rm {} \;
-
-# Regenerate all necessary POD documents
-perl -Ilib bin/pod
+# Build Package
+DZIL_RELEASE=0 dzil build
 
 # Push generated POD changes
 if ! git diff-index --quiet HEAD --; then
-  git commit -am 'Updated documentation'
+  git checkout CHANGES && git add . && git commit -m 'Updated documentation'
 fi
-
-# Build, Tag, and Push Package Release
-dzil release

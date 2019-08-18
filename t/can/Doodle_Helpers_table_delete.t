@@ -31,8 +31,8 @@ method
 
 # TESTING
 
-use Doodle;
+use Doodle::Helpers;
 
-can_ok "Doodle", "table_delete";
+can_ok "Doodle::Helpers", "table_delete";
 
 ok 1 and done_testing;

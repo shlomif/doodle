@@ -222,7 +222,7 @@ method type_uuid(Column $col) {
 }
 
 method create_table(Command $cmd) {
-  my $s = 'create {temporary} table {if_exists} {table} ({columns}{, constraints})';
+  my $s = 'create {temporary} table {if_not_exists} {table} ({columns}{, constraints})';
 
   return $self->render($s, $cmd);
 }

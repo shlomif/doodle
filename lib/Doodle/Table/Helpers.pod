@@ -9,7 +9,7 @@ Doodle::Table::Helpers
 
 =head1 ABSTRACT
 
-Nam suscipit iaculis magna vitae faucibus.
+Doodle Table Helpers
 
 =cut
 
@@ -25,7 +25,7 @@ Nam suscipit iaculis magna vitae faucibus.
 
 =head1 DESCRIPTION
 
-Doodle Table Helpers
+Helpers for configuring Table classes.
 
 =cut
 
@@ -192,6 +192,40 @@ Registers a float column and returns the Command object set.
 =item float example
 
   my $float = $self->float('amount');
+
+=back
+
+=cut
+
+=head2 if_exists
+
+  if_exists() : Table
+
+Used with the C<delete> method to denote that the table should be deleted only
+if it already exists.
+
+=over 4
+
+=item if_exists example
+
+  $self->if_exists;
+
+=back
+
+=cut
+
+=head2 if_not_exists
+
+  if_not_exists() : Table
+
+Used with the C<create> method to denote that the table should be created only
+if it doesn't already exist.
+
+=over 4
+
+=item if_not_exists example
+
+  $self->if_not_exists;
 
 =back
 

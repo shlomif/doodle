@@ -81,4 +81,10 @@ method delete(Any %args) {
   return $command;
 }
 
+method unique() {
+  $self->data->{unique} = 1;
+
+  return $self;
+}
+
 1;

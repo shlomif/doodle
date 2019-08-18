@@ -25,7 +25,8 @@ Doodle Table Class
 
 =head1 DESCRIPTION
 
-Database table representation.
+Database table representation. This class consumes the
+L<Doodle::Table::Helpers> role.
 
 =cut
 
@@ -126,22 +127,6 @@ Registers a table rename and returns the Command object.
 =item rename example
 
   my $rename = $self->rename;
-
-=back
-
-=cut
-
-=head2 update
-
-  update(Any %args) : Command
-
-Registers a table update and returns the Command object.
-
-=over 4
-
-=item update example
-
-  my $update = $self->update;
 
 =back
 

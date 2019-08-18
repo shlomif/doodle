@@ -31,6 +31,8 @@ method
 
 # TESTING
 
-use_ok 'Doodle', 'relation_create';
+use Doodle::Helpers;
+
+use_ok 'Doodle::Helpers', 'relation_create';
 
 ok 1 and done_testing;

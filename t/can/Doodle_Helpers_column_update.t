@@ -31,8 +31,8 @@ method
 
 # TESTING
 
-use Doodle;
+use Doodle::Helpers;
 
-can_ok "Doodle", "column_update";
+can_ok "Doodle::Helpers", "column_update";
 
 ok 1 and done_testing;

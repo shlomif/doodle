@@ -31,8 +31,8 @@ method
 
 # TESTING
 
-use Doodle;
+use Doodle::Helpers;
 
-can_ok "Doodle", "index_create";
+can_ok "Doodle::Helpers", "index_create";
 
 ok 1 and done_testing;

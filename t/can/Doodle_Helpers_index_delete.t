@@ -32,8 +32,9 @@ method
 # TESTING
 
 use Doodle;
+use Doodle::Helpers;
 
-can_ok "Doodle", "index_delete";
+can_ok "Doodle::Helpers", "index_delete";
 
 my $d = Doodle->new;
 

@@ -151,6 +151,12 @@ method render(Str $str, Command $cmd) {
   return $output;
 }
 
+method render_unique(Command $cmd) {
+  # render index "unique" clause
+
+  return $cmd->indices->first->data->{unique} ? 'unique' : undef;
+}
+
 method render_temporary(Command $cmd) {
   # render table "temporary" clause
 
@@ -160,7 +166,17 @@ method render_temporary(Command $cmd) {
 method render_if_exists(Command $cmd) {
   # render table "if exists" clause
 
-  return $cmd->table->data->{if_exists} ? 'if exists' : undef;
+  return 'if exists' if $cmd->table->data->{if_exists};
+
+  return undef;
+}
+
+method render_if_not_exists(Command $cmd) {
+  # render table "if exists" clause
+
+  return 'if not exists' if $cmd->table->data->{if_not_exists};
+
+  return undef;
 }
 
 method render_table(Command $cmd) {

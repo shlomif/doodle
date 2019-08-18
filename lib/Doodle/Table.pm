@@ -112,31 +112,18 @@ method relation(Str $column, Str $ftable, Str $fcolumn, Any %args) {
   return $relation;
 }
 
-method create(Maybe[CodeRef] $callback) {
-  $callback->($self) if $callback;
-
-  my $schema = $self->schema;
+method create(Any %args) {
+  $args{schema} = $self->schema if $self->schema;
 
   my $command = $self->doodle->table_create(
+    %args,
     table => $self,
-    schema => $schema,
     columns => $self->columns,
     indices => $self->indices,
     relations => $self->relations
   );
 
   return $command;
-}
-
-method update(Maybe[CodeRef] $callback) {
-  my $commands = $self->doodle->commands;
-  my $position = $commands->count;
-
-  $callback->($self);
-
-  return $commands if !$commands->count;
-
-  return $commands->slice($position..$commands->count->decr);
 }
 
 method delete(Any %args) {
