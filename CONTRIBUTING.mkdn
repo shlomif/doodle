@@ -2,7 +2,7 @@
 
 Thanks for your interest in this project. We welcome all community
 contributions to this project! To install locally, follow the instructions in
-the [README.md file](./README.md).
+the [README.md](./README.mkdn) file.
 
 ## Project Structure
 
